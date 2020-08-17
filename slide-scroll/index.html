@@ -168,7 +168,11 @@
         const sliderImages = document.querySelectorAll('.slide-in')
 
         function checkSlide(e) {
-            console.log(e)
+
+            sliderImages.forEach(slideImage => {
+                console.log(window.scrollY + window.innerHeight) - slideImage.height / 2;
+                const imageBottom = sliderImage.offsetTop + sliderImage.height;
+            })
         }
 
         window.addEventListener('scroll', debounce(checkSlide))
